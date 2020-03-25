@@ -1,5 +1,7 @@
 import 'package:covid_updates/Models/news.model.dart';
+import 'package:covid_updates/Screens/webview.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Articles extends StatefulWidget {
   Article article;
@@ -12,7 +14,16 @@ class _ArticlesState extends State<Articles> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width - 60;
-    return Card(
+    String url = widget.article.url;
+    return GestureDetector(
+      onTap: () async {
+        // if (await canLaunch(url)) {
+        //   await launch(url);
+        // } else {
+        //   throw 'Could not launch $url';
+        // }
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Webview(widget.article)));
+      },
       child: Container(
           margin: EdgeInsets.only(bottom: 20),
           height: 300,
@@ -31,7 +42,7 @@ class _ArticlesState extends State<Articles> {
                 ),
               ),
               Positioned(
-                top: 150,
+                top: 120,
                 left: 10,
                 child: Container(
                   width: width,

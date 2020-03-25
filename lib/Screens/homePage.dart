@@ -17,12 +17,12 @@ class _HomePageState extends State<HomePage> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xFF1E3CFF),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          CovidNews news = await getCovidNews();
-        },
-        child: Icon(Icons.terrain),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () async {
+      //     CovidNews news = await getCovidNews();
+      //   },
+      //   child: Icon(Icons.terrain),
+      // ),
       body: SafeArea(
         child: Container(
           child: SingleChildScrollView(

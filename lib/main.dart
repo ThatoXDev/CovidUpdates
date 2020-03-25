@@ -5,6 +5,7 @@ import 'package:covid_updates/Screens/mzansi.page.dart';
 import 'package:covid_updates/Screens/preventionPage.dart';
 import 'package:covid_updates/Screens/reportPage.dart';
 import 'package:covid_updates/Screens/symptomsPage.dart';
+import 'package:covid_updates/Screens/webview.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
