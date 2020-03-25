@@ -6,12 +6,13 @@ import 'package:covid_updates/Widgets/lineChart.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class CountryReportPage extends StatefulWidget {
+class MzansiReportPage extends StatefulWidget {
+
   @override
-  _CountryReportPageState createState() => _CountryReportPageState();
+  _MzansiReportPageState createState() => _MzansiReportPageState();
 }
 
-class _CountryReportPageState extends State<CountryReportPage> {
+class _MzansiReportPageState extends State<MzansiReportPage> {
 
   Map data = {};
   Report _report;
@@ -19,15 +20,27 @@ class _CountryReportPageState extends State<CountryReportPage> {
   CountryHistory _countryHistory;
 
   @override
-  void didChangeDependencies() {
-    data = ModalRoute.of(context).settings.arguments;
-    print(data);
-    _countryReport = data['countryReports'];
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initialize();
+  }
+  // @override
+  // void didChangeDependencies() {
+  //   data = ModalRoute.of(context).settings.arguments;
+  //   _countryReport = data['countryReports'];
+  //   print(_countryReport.countryName);
+
+  //   _setReport();
+  //   _fetchHistory();
+  //   super.didChangeDependencies();
+  // }
+  void initialize() async{
+    _countryReport = await getSAreport();
+    
     _setReport();
     _fetchHistory();
-    super.didChangeDependencies();
   }
-
   void _setReport(){
     setState(() {
       _report = new Report(
@@ -41,7 +54,7 @@ class _CountryReportPageState extends State<CountryReportPage> {
   }
 
   void _fetchHistory() async {
-    CountryHistory temp = await getCountryHistoryReport(_countryReport.countryName);
+    CountryHistory temp = await getCountryHistoryReport("South Africa");
     if (!mounted) { return; }
     setState(() {
       _countryHistory = temp;
@@ -53,7 +66,7 @@ class _CountryReportPageState extends State<CountryReportPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '${_countryReport.countryName}',
+          'South Africa',
           style: Theme.of(context).textTheme.title,
         ),
         backgroundColor: Colors.white,

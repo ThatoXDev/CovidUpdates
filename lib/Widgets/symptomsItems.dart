@@ -19,7 +19,7 @@ class _SymptomsItemsState extends State<SymptomsItems> {
         SizedBox(height: 16.0,),
         getSymptomsItems(context, 'Difficulty Breathing'),
         SizedBox(height: 16.0,),
-        
+        getSymptomsItems(context, "Refrain from smoking and other activities that weaken the lungs")
       ],
     );
   }
@@ -46,7 +46,9 @@ class _PreventionItemsState extends State<PreventionItems> {
         SizedBox(height: 16.0,),
         getSymptomsItems(context, 'Stay home if you can'),
         SizedBox(height: 16.0,),
-        
+        getSymptomsItems(context, "Refrain from smoking and other activities that weaken the lungs"),
+                SizedBox(height: 16.0,),
+
       ],
     );
   }
