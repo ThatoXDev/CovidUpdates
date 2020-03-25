@@ -1,6 +1,10 @@
+import 'package:covid_updates/Models/news.model.dart';
+import 'package:covid_updates/Services/reports.dart';
+import 'package:covid_updates/Widgets/articles.dart';
 import 'package:covid_updates/Widgets/homeNavItems.dart';
 import 'package:covid_updates/Widgets/requirements.dart';
 import 'package:flutter/material.dart';
+import 'package:covid_updates/Services/news.service.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,6 +17,12 @@ class _HomePageState extends State<HomePage> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xFF1E3CFF),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          CovidNews news = await getCovidNews();
+        },
+        child: Icon(Icons.terrain),
+      ),
       body: SafeArea(
         child: Container(
           child: SingleChildScrollView(
@@ -30,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Prevent COVID - 19 ',
+                              'SA COVID - 19 ',
                               style: Theme.of(context).textTheme.title.copyWith(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w100),
@@ -86,10 +96,22 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               height: 24.0,
                             ),
-                            Center(
-                              child:
-                                  Image.asset('assets/images/coming_soon.png'),
-                            ),
+                            FutureBuilder(
+                                future: getCovidNews(),
+                                builder: (context,AsyncSnapshot<CovidNews> snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.done) {
+                                    if (snapshot != null && snapshot.hasData) {
+
+                                      return Column(children: snapshot.data.articles.map<Widget>((art) => Articles(article: art)).toList());
+                                    } else {
+                                      return Error404("No articles");
+                                    }
+                                  } else {
+                                    return Center(
+                                        child: CircularProgressIndicator());
+                                  }
+                                })
                           ],
                         ),
                       )
@@ -102,5 +124,9 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+ Widget Error404(String s) {
+    return Container(child: Text(s));
   }
 }

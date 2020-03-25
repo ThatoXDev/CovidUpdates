@@ -59,6 +59,29 @@ Future<List<CountryReport>> getAllCountriesReport() async {
   return reports;
 }
 
+Future<CountryReport> getSAreport() async {
+CountryReport reports;
+
+  try {
+    Response response = await get(link + "countries/South Africa");
+    Map data = jsonDecode(response.body);
+     reports = new CountryReport(
+        deaths: data["deaths"],
+        recovered: data["recovered"],
+        totalCases: data["cases"],
+        confirmed: data['cases'] - (data['deaths'] + data['recovered']),
+        todayCases: data['todayCases'],
+        todayDeaths: data['todayDeaths'],
+        countryName: data['country']);
+
+
+  } catch (e) {
+    print("Exception Caught at getCountriesReport() $e");
+  }
+
+  return reports;
+}
+
 Future<CountryHistory> getCountryHistoryReport(String countryName) async {
   try {
     Response response = await get(link + "historical/" + countryName);

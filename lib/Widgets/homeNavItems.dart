@@ -41,7 +41,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: Icons.insert_chart,
-                title: 'Reports',
+                title: 'World Report',
                 subTitle: 'Data and info related to the disease',
                 navigate: 'reports'
                 ),
@@ -51,9 +51,9 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: FontAwesomeIcons.globeAmericas,
-                title: 'Countries',
+                title: 'South Africa',
                 subTitle: 'Countries infected by COVID-19',
-                navigate: 'countries'),
+                navigate: 'mzansi'),
           ],
         ),
         SizedBox(
