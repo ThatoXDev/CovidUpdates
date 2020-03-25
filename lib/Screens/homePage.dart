@@ -38,12 +38,24 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.all(24.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
+
                           children: <Widget>[
-                            Text(
-                              'SA COVID - 19 ',
-                              style: Theme.of(context).textTheme.title.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w100),
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  'SA COVID - 19 ',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .title
+                                      .copyWith(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w100),
+                                ),
+                                //add references here, project owner, data provider
+                                IconButton(icon: Icon(Icons.info, size: 28, color: Colors.orange,), onPressed: null)
+                              ],
                             ),
                             SizedBox(
                               height: 32.0,
@@ -67,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              "Requirments",
+                              "Requirements",
                               style: Theme.of(context).textTheme.title,
                             ),
                             SizedBox(
@@ -98,12 +110,16 @@ class _HomePageState extends State<HomePage> {
                             ),
                             FutureBuilder(
                                 future: getCovidNews(),
-                                builder: (context,AsyncSnapshot<CovidNews> snapshot) {
+                                builder: (context,
+                                    AsyncSnapshot<CovidNews> snapshot) {
                                   if (snapshot.connectionState ==
                                       ConnectionState.done) {
                                     if (snapshot != null && snapshot.hasData) {
-
-                                      return Column(children: snapshot.data.articles.map<Widget>((art) => Articles(article: art)).toList());
+                                      return Column(
+                                          children: snapshot.data.articles
+                                              .map<Widget>((art) =>
+                                                  Articles(article: art))
+                                              .toList());
                                     } else {
                                       return Error404("No articles");
                                     }
@@ -126,7 +142,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
- Widget Error404(String s) {
+  Widget Error404(String s) {
     return Container(child: Text(s));
   }
 }
