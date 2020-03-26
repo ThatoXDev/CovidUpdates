@@ -1,7 +1,7 @@
 import 'package:covid_updates/Models/news.model.dart';
 import 'package:covid_updates/Screens/webview.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class Articles extends StatefulWidget {
   Article article;
@@ -15,6 +15,9 @@ class _ArticlesState extends State<Articles> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width - 60;
     String url = widget.article.url;
+    DateTime dt = DateTime.parse(widget.article.publishedAt);
+    var timePublished = timeago.format(dt);
+
     return GestureDetector(
       onTap: () async {
         // if (await canLaunch(url)) {
@@ -22,7 +25,8 @@ class _ArticlesState extends State<Articles> {
         // } else {
         //   throw 'Could not launch $url';
         // }
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Webview(widget.article)));
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => Webview(widget.article)));
       },
       child: Container(
           margin: EdgeInsets.only(bottom: 20),
@@ -71,7 +75,7 @@ class _ArticlesState extends State<Articles> {
                 bottom: 10.0,
                 left: 10,
                 child: Container(
-                    child: Text("${widget.article.publishedAt}",
+                    child: Text("$timePublished",
                         style: Theme.of(context).textTheme.body1.copyWith(
                               color: Colors.white,
                             ))),
