@@ -1,4 +1,5 @@
 import 'package:covid_updates/Models/news.model.dart';
+import 'package:covid_updates/Screens/accreditations.dart';
 import 'package:covid_updates/Services/reports.dart';
 import 'package:covid_updates/Widgets/articles.dart';
 import 'package:covid_updates/Widgets/homeNavItems.dart';
@@ -15,6 +16,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+
+
+
     return Scaffold(
       backgroundColor: Color(0xFF1E3CFF),
       // floatingActionButton: FloatingActionButton(
@@ -31,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 Container(
                   color: Color(0xFF1E3CFF),
-                  child: Column(
+                  child: Column( 
                     children: <Widget>[
                       Container(
                         width: width,
@@ -49,12 +53,18 @@ class _HomePageState extends State<HomePage> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .title
-                                      .copyWith(
+                                      .copyWith( 
                                           color: Colors.white,
                                           fontWeight: FontWeight.w100),
                                 ),
+                                
                                 //add references here, project owner, data provider
-                                IconButton(icon: Icon(Icons.info, size: 28, color: Colors.orange,), onPressed: null)
+                                IconButton(icon: Icon(Icons.info, size: 28, color: Colors.orangeAccent,), onPressed: (){
+                                 accredPage(context); 
+                                },
+                                
+                                )
+                                    
                               ],
                             ),
                             SizedBox(
@@ -139,8 +149,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+
     );
   }
+  
+  accredPage (context)  {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => accreditations()));
+}
 
   Widget Error404(String s) {
     return Container(child: Text(s));
