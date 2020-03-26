@@ -2,7 +2,7 @@ import 'package:covid_updates/Widgets/symptomsItems.dart';
 import 'package:flutter/material.dart';
 
 class PreventioPage extends StatefulWidget {
-  @override
+  @override 
   _PreventioPageState createState() => _PreventioPageState();
 }
  
@@ -26,7 +26,7 @@ class _PreventioPageState extends State<PreventioPage> {
               child: PreventionItems(),
             ),
             Image.asset('assets/images/doctor1.jpg'),
-            Container(
+            Container( 
               padding: EdgeInsets.all(24.0),
               color: Colors.white,
               child: Column(

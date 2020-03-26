@@ -6,8 +6,8 @@ class SymptomsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Symptoms",
+        title: Text(  
+          "Covid-19 Symptoms",
         ),
         centerTitle: true,
         elevation: 0.0,
@@ -26,7 +26,7 @@ class SymptomsPage extends StatelessWidget {
               color: Colors.white,
               child: Column(
                 children: <Widget>[
-                  RichText(
+                  RichText( 
                     text: TextSpan(
                       style: DefaultTextStyle.of(context).style,
                       children: <TextSpan>[

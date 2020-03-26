@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 class Requirements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(  
+    return Row(   
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        getRequirementItems(context: context, text: 'Recommended \nMask', imgSrc: 'mask', bgColor: Colors.red[100], imgColor: Colors.red[700]),
-        getRequirementItems(context: context, text: 'Wear \nGloves', imgSrc: 'gloves', bgColor: Colors.amber[100], imgColor: Colors.amber[700]),
-        getRequirementItems(context: context, text: '60 => Alchohol \n Sanitzier', imgSrc: 'alchohol', bgColor: Colors.blue[100], imgColor: Colors.blue[700]),
-        getRequirementItems(context: context, text: 'wash with \nSoap', imgSrc:'soap', bgColor: Colors.grey[300], imgColor: Colors.grey[700]),
+      children: <Widget>[ 
+        getRequirementItems(context: context, text: 'if you suspect that you are infected with Covid-19 use surgical Masks to cover your mouth', imgSrc: 'mask', bgColor: Colors.red[100], imgColor: Colors.red[700]),
+        getRequirementItems(context: context, text: 'if you suspect that you are infected with Covid-19  wear gloves', imgSrc: 'gloves', bgColor: Colors.amber[100], imgColor: Colors.amber[700]),
+        
+        getRequirementItems(context: context, text: 'use 60% or more Alchohol based hand Sanitzier', imgSrc: 'alchohol', bgColor: Colors.blue[100], imgColor: Colors.blue[700]),
+        getRequirementItems(context: context, text: 'wash your regularly with hands with Soap & Water', imgSrc:'soap', bgColor: Colors.grey[300], imgColor: Colors.grey[700]),
       ],
     ); 
   }
-} 
+}  
 
 Widget getRequirementItems({BuildContext context, String text, String imgSrc, Color bgColor, Color imgColor}) {
   return Column(

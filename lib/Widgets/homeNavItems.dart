@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeNavItems extends StatefulWidget {
@@ -17,7 +17,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: Icons.mood_bad,
-                title: 'Symptoms',
+                title: 'Covid-19 Symptoms',
                 subTitle: 'Signs to Identify the risk of Infection',
                 navigate: 'symptoms'),
             SizedBox(
@@ -26,7 +26,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: FontAwesomeIcons.solidHospital,
-                title: 'Prevention',
+                title: 'Covid-19 Prevention',
                 subTitle: 'Help you to avoid getting infected',
                 navigate: 'prevention'
                 ),
@@ -41,18 +41,18 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: Icons.insert_chart,
-                title: 'World Report',
+                title: 'Covid-19 World Report',
                 subTitle: 'Data and info related to the disease',
                 navigate: 'reports'
                 ),
-            SizedBox(
+            SizedBox( 
               width: 16.0,
             ),
             getHomePageNavItems(
                 context: context,
                 icon: FontAwesomeIcons.globeAmericas,
-                title: 'South Africa',
-                subTitle: 'Countries infected by COVID-19',
+                title: 'Covid-19 in South Africa',
+                subTitle: 'Information/ Stats about SA infections of COVID-19',
                 navigate: 'mzansi'),
           ],
         ),

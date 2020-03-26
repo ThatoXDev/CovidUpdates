@@ -10,16 +10,16 @@ class _SymptomsItemsState extends State<SymptomsItems> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
-        getSymptomsItems(context, 'Fever'),
+      children: <Widget>[ 
+        getSymptomsItems(context, 'Do you have fever'),
         SizedBox(height: 16.0,),
-        getSymptomsItems(context, 'Cough'),
+        getSymptomsItems(context, 'Do you have a dry cough'),
         SizedBox(height: 16.0,),
-        getSymptomsItems(context, 'Tiredness'),
+        getSymptomsItems(context, 'Do you feel tiredness'),
         SizedBox(height: 16.0,),
-        getSymptomsItems(context, 'Difficulty Breathing'),
+        getSymptomsItems(context, 'Do you have difficulty Breathing'),
         SizedBox(height: 16.0,),
-        getSymptomsItems(context, "Refrain from smoking and other activities that weaken the lungs")
+        getSymptomsItems(context, "Do not smoke or do activities that weaken your lung!s")
       ],
     );
   }
@@ -36,13 +36,13 @@ class _PreventionItemsState extends State<PreventionItems> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        getSymptomsItems(context, 'Wash hands often'),
+        getSymptomsItems(context, 'Wash hands often with soap and water'),
         SizedBox(height: 16.0,),
         getSymptomsItems(context, 'Cough into elbow'),
         SizedBox(height: 16.0,),
         getSymptomsItems(context, "Don't touch your face"),
         SizedBox(height: 16.0,),
-        getSymptomsItems(context, 'Keep safe distance'),
+        getSymptomsItems(context, 'Keep a safe distance of 3 feet or 1 meter from people who cough & sneez'),
         SizedBox(height: 16.0,),
         getSymptomsItems(context, 'Stay home if you can'),
         SizedBox(height: 16.0,),

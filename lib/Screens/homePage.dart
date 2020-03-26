@@ -44,7 +44,6 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
 
                           children: <Widget>[
-
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -57,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Colors.white,
                                           fontWeight: FontWeight.w100),
                                 ),
-                                
+                                 
                                 //add references here, project owner, data provider
                                 IconButton(icon: Icon(Icons.info, size: 28, color: Colors.orangeAccent,), onPressed: (){
                                  accredPage(context); 
@@ -77,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Container(
+                Container( 
                   color: Colors.white,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                               height: 8.0,
                             ),
                             Text(
-                              "Help you to prevent viruses better",
+                              "To Prevent the spread of Covid-19",
                               style: Theme.of(context).textTheme.caption,
                             ),
                             SizedBox(
