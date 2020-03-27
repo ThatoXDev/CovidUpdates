@@ -1,9 +1,8 @@
 import 'package:covid_updates/Widgets/refs.dart';
-import 'package:covid_updates/Widgets/requirements.dart';
 import 'package:flutter/material.dart';
 
  
-class accreditations extends StatelessWidget {
+class Accreditations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

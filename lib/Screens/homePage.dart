@@ -1,6 +1,5 @@
 import 'package:covid_updates/Models/news.model.dart';
 import 'package:covid_updates/Screens/accreditations.dart';
-import 'package:covid_updates/Services/reports.dart';
 import 'package:covid_updates/Widgets/articles.dart';
 import 'package:covid_updates/Widgets/homeNavItems.dart';
 import 'package:covid_updates/Widgets/requirements.dart';
@@ -130,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                                                   Articles(article: art))
                                               .toList());
                                     } else {
-                                      return Error404("No articles");
+                                      return error404("No articles");
                                     }
                                   } else {
                                     return Center(
@@ -153,10 +152,10 @@ class _HomePageState extends State<HomePage> {
   }
   
   accredPage (context)  {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => accreditations()));
+  Navigator.push(context, MaterialPageRoute(builder: (context) => Accreditations()));
 }
 
-  Widget Error404(String s) {
+  Widget error404(String s) {
     return Container(child: Text(s));
   }
 }
