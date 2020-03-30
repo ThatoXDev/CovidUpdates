@@ -20,12 +20,12 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Color(0xFF1E3CFF),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () async {
-      //     CovidNews news = await getCovidNews();
-      //   },
-      //   child: Icon(Icons.terrain),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("/prov");
+        },
+        child: Icon(Icons.add),
+      ),
       body: SafeArea(
         child: Container(
           child: SingleChildScrollView(
