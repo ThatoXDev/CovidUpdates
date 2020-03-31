@@ -29,12 +29,14 @@ class _ArticlesState extends State<Articles> {
             MaterialPageRoute(builder: (context) => Webview(widget.article)));
       },
       child: Container(
+          color: Colors.black54,
+
           margin: EdgeInsets.only(bottom: 20),
-          height: 300,
-          color: Colors.black,
+          height: 250,
           child: Stack(
             children: <Widget>[
               Container(
+
                 decoration: BoxDecoration(
                   color: Colors.black38,
                   image: DecorationImage(
@@ -46,9 +48,10 @@ class _ArticlesState extends State<Articles> {
                 ),
               ),
               Positioned(
-                top: 120,
+                bottom: 10,
                 left: 10,
                 child: Container(
+                  padding: EdgeInsets.only(right:5),
                   width: width,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,22 +67,29 @@ class _ArticlesState extends State<Articles> {
                       Text(
                         "${widget.article.title}",
                         softWrap: true,
-                        style: Theme.of(context).textTheme.headline.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.w100),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: 10.0,
-                left: 10,
-                child: Container(
+                        style: Theme.of(context).textTheme.subhead.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.w600),
+                      ),SizedBox(
+                        height: 10,
+                      ),
+                      Container(
                     child: Text("$timePublished",
                         style: Theme.of(context).textTheme.body1.copyWith(
                               color: Colors.white,
                             ))),
-              )
+                    ],
+                  ),
+                ),
+              ),
+              // Positioned(
+              //   bottom: 10.0,
+              //   left: 10,
+              //   child: Container(
+              //       child: Text("$timePublished",
+              //           style: Theme.of(context).textTheme.body1.copyWith(
+              //                 color: Colors.white,
+              //               ))),
+              // )
             ],
           )),
     );

@@ -74,12 +74,12 @@ class _MzansiReportPageState extends State<MzansiReportPage> {
           iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
         ),
-        floatingActionButton: FloatingActionButton(onPressed: ()async{
+        // floatingActionButton: FloatingActionButton(onPressed: ()async{
 
-          var jeep = await getCountryHistoryReport("South Africa");
-          print(jeep.cases);
-          print(jeep.cases);
-        }, child: Icon(Icons.place),),
+        //   var jeep = await getCountryHistoryReport("South Africa");
+        //   print(jeep.cases);
+        //   print(jeep.cases);
+        // }, child: Icon(Icons.place),),
         body: FutureBuilder(
             future: getSAreport(),
             builder: (contex, snapshot) {

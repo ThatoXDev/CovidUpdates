@@ -5,6 +5,7 @@ import 'package:covid_updates/Screens/countriesPage.dart';
 import 'package:covid_updates/Screens/homePage.dart';
 import 'package:covid_updates/Screens/mzansi.page.dart';
 import 'package:covid_updates/Screens/preventionPage.dart';
+import 'package:covid_updates/Screens/provinces.dart';
 import 'package:covid_updates/Screens/reportPage.dart';
 import 'package:covid_updates/Screens/symptomsPage.dart';
 import 'package:covid_updates/homeScreen.dart';
@@ -90,6 +91,7 @@ class MyApp extends StatelessWidget {
          '/countries' : (context) => Countriespage(),
          '/countryReport' : (context) => CountryReportPage(),
          '/mzansi' : (context) => MzansiReportPage(),
+         '/prov' : (context) => Provinces(),
       },
     ); 
   }

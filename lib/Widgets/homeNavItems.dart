@@ -51,8 +51,8 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: FontAwesomeIcons.globeAmericas,
-                title: 'South Africa Report',
-                subTitle: 'Information/ Stats about SA infections of COVID-19',
+                title: 'South Africa',
+                subTitle: 'Information about SA infections of COVID-19',
                 navigate: 'mzansi'),
           ],
         ),
