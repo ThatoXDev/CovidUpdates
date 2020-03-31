@@ -6,7 +6,8 @@ class Accreditations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( 
+         backgroundColor: Color(0xFF1E3CFF),
         title: Text('References | Data Provider'),
         
       ), 

@@ -17,7 +17,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: Icons.mood_bad,
-                title: 'Covid-19 Symptoms',
+                title: 'Symptoms',
                 subTitle: 'Signs to Identify the risk of Infection',
                 navigate: 'symptoms'),
             SizedBox(
@@ -26,7 +26,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: FontAwesomeIcons.solidHospital,
-                title: 'Covid-19 Prevention',
+                title: 'Prevention',
                 subTitle: 'Help you to avoid getting infected',
                 navigate: 'prevention'
                 ),
@@ -41,7 +41,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: Icons.insert_chart,
-                title: 'Covid-19 World Report',
+                title: 'World Report',
                 subTitle: 'Data and info related to the disease',
                 navigate: 'reports'
                 ),
@@ -51,7 +51,7 @@ class _HomeNavItemsState extends State<HomeNavItems> {
             getHomePageNavItems(
                 context: context,
                 icon: FontAwesomeIcons.globeAmericas,
-                title: 'Covid-19 in South Africa',
+                title: 'South Africa Report',
                 subTitle: 'Information/ Stats about SA infections of COVID-19',
                 navigate: 'mzansi'),
           ],

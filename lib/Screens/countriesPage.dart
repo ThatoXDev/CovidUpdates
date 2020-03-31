@@ -1,18 +1,18 @@
 import 'package:covid_updates/Models/reportModel.dart';
 import 'package:covid_updates/Services/reports.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/fa_icon.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+ 
 class Countriespage extends StatefulWidget {
   @override
   _CountriespageState createState() => _CountriespageState();
 }
-
+ 
 class _CountriespageState extends State<Countriespage> {
   List<CountryReport> reports, _filteredReports;
   String search;
-
+ 
   @override
   void initState() {
     super.initState();
@@ -38,7 +38,7 @@ class _CountriespageState extends State<Countriespage> {
                 'Countries',
                 style: TextStyle(color: Colors.black),
               ),
-              centerTitle: true,
+              centerTitle: true, 
               backgroundColor: Colors.white,
               iconTheme: IconThemeData(color: Colors.black),
               elevation: 0.0,

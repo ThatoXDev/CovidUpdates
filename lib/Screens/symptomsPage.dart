@@ -6,7 +6,8 @@ class SymptomsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(  
+         backgroundColor: Color(0xFF1E3CFF),
+        title: Text(   
           "Covid-19 Symptoms",
         ),
         centerTitle: true,
@@ -15,10 +16,10 @@ class SymptomsPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+            Container( 
               padding: EdgeInsets.all(16.0),
               color: Color(0xFF1E3CFF),
-              child: SymptomsItems(),
+              child: SymptomsItems(), 
             ),
             Image.asset('assets/images/symptomMain.jpg'),
             Container(

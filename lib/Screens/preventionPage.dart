@@ -11,6 +11,7 @@ class _PreventioPageState extends State<PreventioPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF1E3CFF),
         title: Text(
           "Prevention",
         ),
